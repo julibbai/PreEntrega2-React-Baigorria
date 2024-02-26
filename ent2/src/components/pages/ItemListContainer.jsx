@@ -9,6 +9,7 @@ const ItemListContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getProducts().then((resp) => {
       if (category) {
         const productsFilter = resp.filter(
@@ -21,7 +22,7 @@ const ItemListContainer = () => {
 
       setIsLoading(false);
     });
-  }, []);
+  }, [category]);
 
   return (
     <>

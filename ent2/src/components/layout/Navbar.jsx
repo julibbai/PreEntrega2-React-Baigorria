@@ -18,12 +18,15 @@ export const Navbar = () => {
           <Button variant="text">Inicio</Button>
         </Link>
 
-        <Link>
+        <Link to="/category/interior">
           <Button variant="text">Luz interior</Button>
         </Link>
-        <Button variant="text">Luz exterior</Button>
-        <Button variant="text">Tiras Led</Button>
-
+        <Link to="/category/exterior">
+          <Button variant="text">Luz exterior</Button>
+        </Link>
+        <Link to="/category/led">
+          <Button variant="text">Tiras Led</Button>
+        </Link>
         <Link to="/cart">
           <CartWidget />
         </Link>
