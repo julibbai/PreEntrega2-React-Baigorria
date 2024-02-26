@@ -2,7 +2,7 @@ const products = [
   {
     id: "1",
     name: "lamparaA",
-    img: "https://res.cloudinary.com/dedwpwwti/image/upload/v1708890322/lampext3_v5fvur.webp",
+    img: "",
     price: 200,
     category: "interior",
     description: "la mejor lampara",
@@ -11,7 +11,7 @@ const products = [
   {
     id: "2",
     name: "lamparaB",
-    img: "https://res.cloudinary.com/dedwpwwti/image/upload/v1708890322/lamparaint1_neszm2.webp",
+    img: "",
     price: 850,
     category: "exterior",
     description: "la lampara de afuera",
@@ -21,7 +21,7 @@ const products = [
   {
     id: "3",
     name: "lamparaC",
-    img: "https://res.cloudinary.com/dedwpwwti/image/upload/v1708890322/lamparaint1_neszm2.webp",
+    img: "",
     price: 750,
     category: "interior",
     description: "la lampara de adentro",
@@ -37,6 +37,24 @@ export const getProducts = () => {
       }, 2000);
     } else {
       reject("no hay productos");
+    }
+  });
+};
+
+export const getProduct = (id) => {
+  return new Promise((resolve, reject) => {
+    if (products.length > 0) {
+      const item = products.find((product) => product.id === id);
+
+      setTimeout(() => {
+        if (item) {
+          resolve(item);
+        } else {
+          reject(`No se encuentra el producto con el id ${id}`);
+        }
+      }, 2000);
+    } else {
+      reject("No hay productos");
     }
   });
 };

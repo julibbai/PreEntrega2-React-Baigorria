@@ -16,12 +16,17 @@ export const ItemCount = ({ stock, initial = 1 }) => {
   };
 
   return (
-    <div className="d-flex flex-column col-2 justify-content-center align-content-center p-4">
+    <div className="d-flex flex-column col-3 justify-content-center align-content-center p-4">
       <div>
+        <button className="btn btn-outline-secondary mx-3" onClick={decrement}>
+          -
+        </button>
+
+        <strong>{count}</strong>
+
         <button className="btn btn-outline-secondary mx-3" onClick={increment}>
           +
         </button>
-        <strong>{count}</strong>
       </div>
     </div>
   );

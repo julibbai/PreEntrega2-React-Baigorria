@@ -1,4 +1,6 @@
-export const Item = ({ name, img, description }) => {
+import { Link } from "react-router-dom";
+
+export const Item = ({ id, name, img, description }) => {
   return (
     <div className="border m-2">
       <div className="card">
@@ -6,8 +8,9 @@ export const Item = ({ name, img, description }) => {
           <h5 className="card-title"> {name}</h5>
           <img src={img} alt="" />
           <p className="card-text"> {description}</p>
-
-          <button className="btn btn-outline-success">Detalles</button>
+          <Link to={`/item/${id}`}>
+            <button className="btn btn-outline-success">Detalles</button>
+          </Link>
         </div>
       </div>
     </div>
