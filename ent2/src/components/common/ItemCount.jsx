@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 export const ItemCount = ({ stock, initial = 1 }) => {
   const [count, setCount] = useState(initial);
@@ -27,6 +29,8 @@ export const ItemCount = ({ stock, initial = 1 }) => {
         <button className="btn btn-outline-secondary mx-3" onClick={increment}>
           +
         </button>
+
+        <Button variant="text">Agregar al carrito</Button>
       </div>
     </div>
   );

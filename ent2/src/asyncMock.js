@@ -1,30 +1,63 @@
 const products = [
   {
     id: "1",
-    name: "lamparaA",
-    img: "",
+    name: "Farol de pared",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampext3_v5fvur.webp",
     price: 200,
-    category: "interior",
-    description: "la mejor lampara",
+    category: "exterior",
+    description: "Farol de color negro hecho de Polipropileno",
     stock: 10,
   },
+
   {
     id: "2",
-    name: "lamparaB",
-    img: "",
-    price: 850,
-    category: "exterior",
-    description: "la lampara de afuera",
-    stock: 6,
+    name: "lamparaC",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/tiraled_vlf2iy.jpg",
+
+    price: 750,
+    category: "interior",
+    description: "la lampara de adentro",
+    stock: 8,
   },
 
   {
     id: "3",
-    name: "lamparaC",
-    img: "",
+    name: "Lampara Aplique de dos luces",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lamparaint2_bw3cge.webp",
+    price: 850,
+    category: "interior",
+    description: "Lampara de dos luces, con material de chapa galvanizada",
+    stock: 6,
+  },
+
+  {
+    id: "4",
+    name: "Lampara Vintage",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampext1_btejml.webp",
     price: 750,
     category: "interior",
-    description: "la lampara de adentro",
+    description: "Lampara colgante hecha de algodón y tejido",
+    stock: 8,
+  },
+
+  {
+    id: "5",
+    name: "Farol de pared texturado",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampint3_gxxc8g.webp",
+    price: 750,
+    category: "exterior",
+    description:
+      "Lampara farol de pared con material texturizado negro de hierro",
+    stock: 8,
+  },
+
+  {
+    id: "6",
+    name: "Lampara colgante industrial",
+    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lamparaint1_neszm2.webp",
+    price: 750,
+    category: "interior",
+    description: "Lampara de estilo industrial hecha de metal, color negro",
     stock: 8,
   },
 ];
