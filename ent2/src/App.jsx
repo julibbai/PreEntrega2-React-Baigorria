@@ -7,6 +7,7 @@ import { ItemDetailContainer } from "./components/pages";
 import { Footer } from "./components/layout/Footer";
 import { Layout } from "./components/layout/Layout";
 import { CheckoutContainer } from "./components/pages/checkout/CheckoutContainer";
+import { CartContainer } from "./components/pages/cart/CartContainer";
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
           <Route element={<Layout />}>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/category/:category" element={<ItemListContainer />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<CartContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/checkout" element={<CheckoutContainer />} />
           </Route>
