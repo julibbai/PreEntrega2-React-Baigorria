@@ -11,12 +11,12 @@ const products = [
 
   {
     id: "2",
-    name: "lamparaC",
+    name: "Tiras Led",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/tiraled_vlf2iy.jpg",
 
     price: 750,
-    category: "interior",
-    description: "la lampara de adentro",
+    category: "led",
+    description: "Tiras Led RGB",
     stock: 8,
   },
 
@@ -32,22 +32,22 @@ const products = [
 
   {
     id: "4",
-    name: "Lampara Vintage",
+    name: "Farol de pared texturado",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampext1_btejml.webp",
     price: 750,
-    category: "interior",
-    description: "Lampara colgante hecha de algodón y tejido",
+    category: "exterior",
+    description:
+      "Lampara farol de pared con material texturizado negro de hierro",
     stock: 8,
   },
 
   {
     id: "5",
-    name: "Farol de pared texturado",
+    name: "Lampara Vintage",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampint3_gxxc8g.webp",
     price: 750,
-    category: "exterior",
-    description:
-      "Lampara farol de pared con material texturizado negro de hierro",
+    category: "interior",
+    description: "Lampara colgante hecha de algodón y tejido",
     stock: 8,
   },
 

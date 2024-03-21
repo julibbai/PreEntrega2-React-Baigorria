@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../../asyncMock";
 import { ItemList } from "../common/ItemList";
 import { useParams } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+
+const LoadingSpinner = () => (
+  <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+    <CircularProgress />
+  </div>
+);
 
 const ItemListContainer = () => {
   const { category } = useParams();
@@ -27,7 +34,9 @@ const ItemListContainer = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Cargando productos...</h2>
+        <h2>
+          <LoadingSpinner />
+        </h2>
       ) : (
         <ItemList products={products} />
       )}

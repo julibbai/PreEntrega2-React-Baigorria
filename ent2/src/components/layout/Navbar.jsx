@@ -8,29 +8,31 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light">
-      <Stack spacing={5} direction="row">
-        <h5>
-          {" "}
-          <FaRegLightbulb /> ILed{" "}
-        </h5>
-        <Link to="/">
-          <Button variant="text">Inicio</Button>
-        </Link>
+    <>
+      <div className="navbar navbar-expand-lg navbar-light bg-light">
+        <Stack spacing={5} direction="row">
+          <h5>
+            {" "}
+            <FaRegLightbulb /> ILed{" "}
+          </h5>
+          <Link to="/">
+            <Button variant="text">Inicio</Button>
+          </Link>
 
-        <Link to="/category/interior">
-          <Button variant="text">Luz interior</Button>
-        </Link>
-        <Link to="/category/exterior">
-          <Button variant="text">Luz exterior</Button>
-        </Link>
-        <Link to="/category/led">
-          <Button variant="text">Tiras Led</Button>
-        </Link>
-        <Link to="/cart">
-          <CartWidget />
-        </Link>
-      </Stack>
-    </div>
+          <Link to="/category/interior">
+            <Button variant="text">Luz interior</Button>
+          </Link>
+          <Link to="/category/exterior">
+            <Button variant="text">Luz exterior</Button>
+          </Link>
+          <Link to="/category/led">
+            <Button variant="text">Tiras Led</Button>
+          </Link>
+          <Link to="/cart">
+            <CartWidget />
+          </Link>
+        </Stack>
+      </div>
+    </>
   );
 };

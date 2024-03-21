@@ -3,6 +3,14 @@ import { ItemDetail } from "../common/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../asyncMock";
 
+import CircularProgress from "@mui/material/CircularProgress";
+
+const LoadingSpinner = () => (
+  <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+    <CircularProgress />
+  </div>
+);
+
 const ItemDetailContainer = () => {
   const { id } = useParams();
 
@@ -16,13 +24,25 @@ const ItemDetailContainer = () => {
     });
   }, []);
 
+  const onAdd = (cantidad) => {
+    console.log(item);
+    console.log(cantidad);
+    let infoProducto = {
+      ...item,
+      quantity: cantidad,
+    };
+    console.log(infoProducto);
+  };
+
   return (
     <>
       {" "}
       {isLoading ? (
-        <h2>Cargando producto...</h2>
+        <h2>
+          <CircularProgress />
+        </h2>
       ) : (
-        <ItemDetail {...item} />
+        <ItemDetail item={item} onAdd={onAdd} />
       )}{" "}
     </>
   );
