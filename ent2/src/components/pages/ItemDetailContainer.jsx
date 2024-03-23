@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
   const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
   const initial = getTotalQuantityById(id);
-  console.log(initial);
+
   useEffect(() => {
     setIsLoading(true);
     let productsCollection = collection(db, "products");
@@ -36,9 +36,6 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (cantidad) => {
-    console.log(item);
-    console.log(cantidad);
-
     let infoProducto = {
       ...item,
       quantity: cantidad,

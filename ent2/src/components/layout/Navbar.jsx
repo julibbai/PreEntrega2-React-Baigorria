@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaRegLightbulb } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { menuNavigation } from "../../router/menuNavigation";
 
 export const Navbar = () => {
   return (
@@ -28,6 +29,7 @@ export const Navbar = () => {
           <Link to="/category/led">
             <Button variant="text">Tiras Led</Button>
           </Link>
+
           <Link to="/cart">
             <CartWidget />
           </Link>
