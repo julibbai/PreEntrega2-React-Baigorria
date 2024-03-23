@@ -1,31 +1,38 @@
-export const Checkout = ({ envioDeFormulario, capturar }) => {
+import { Link } from "react-router-dom";
+
+export const Checkout = ({ envioDeFormulario, capturar, orderId }) => {
   return (
     <div>
-      <h1>Acá va el Checkout</h1>
+      {orderId ? (
+        <div>
+          <h1>Gracias... tu numero es {orderId}</h1>
+          <Link to="/">Seguir comprando</Link>
+        </div>
+      ) : (
+        <form onSubmit={envioDeFormulario}>
+          <input
+            type="text"
+            placeholder="Ingresa tu nombre"
+            onChange={capturar}
+            name="name"
+          />
+          <input
+            type="text"
+            placeholder="Ingresa tu teléfono"
+            onChange={capturar}
+            name="phone"
+          />
 
-      <form onSubmit={envioDeFormulario}>
-        <input
-          type="text"
-          placeholder="Ingresa tu nombre"
-          onChange={capturar}
-          name="name"
-        />
-        <input
-          type="text"
-          placeholder="Ingresa tu teléfono"
-          onChange={capturar}
-          phone="phone"
-        />
+          <input
+            type="text"
+            placeholder="Ingresa tu email"
+            onChange={capturar}
+            name="email"
+          />
 
-        <input
-          type="text"
-          placeholder="Ingresa tu email"
-          onChange={capturar}
-          email="email"
-        />
-
-        <button type="submit">Enviar</button>
-      </form>
+          <button type="submit">Comprar</button>
+        </form>
+      )}
     </div>
   );
 };
