@@ -10,6 +10,7 @@ export const ItemDetail = ({
   stock,
   item,
   onAdd,
+  initial,
 }) => {
   return (
     <div className="border m-2">
@@ -20,7 +21,17 @@ export const ItemDetail = ({
           <p className="card-text">{item.description}</p>
           <p>Precio:{item.price}</p>
 
-          <ItemCountContainer stock={item.stock} onAdd={onAdd} />
+          {initial ? (
+            <h3>Ya tienes {initial} en el carrito</h3>
+          ) : (
+            <h2>No tienes unidades</h2>
+          )}
+
+          <ItemCountContainer
+            stock={item.stock}
+            onAdd={onAdd}
+            initial={initial}
+          />
         </div>
       </div>
     </div>

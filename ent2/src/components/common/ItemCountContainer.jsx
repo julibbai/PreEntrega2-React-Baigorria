@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ItemCount } from "./ItemCount";
 
-const ItemCountContainer = ({ stock, onAdd }) => {
-  const [counter, setCounter] = useState(1);
+const ItemCountContainer = ({ stock, onAdd, initial = 1 }) => {
+  const [counter, setCounter] = useState(initial);
 
   const addOne = () => {
     if (counter < stock) {

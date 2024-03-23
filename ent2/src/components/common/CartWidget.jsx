@@ -1,9 +1,13 @@
 import { LuShoppingCart } from "react-icons/lu";
-
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 const CartWidget = () => {
+  const { getTotalItems } = useContext(CartContext);
+
+  let total = getTotalItems();
   return (
     <div>
-      <span>10</span>
+      <span>{total}</span>
       <LuShoppingCart />
     </div>
   );
