@@ -35,14 +35,23 @@ export const CartContainer = () => {
           <button onClick={() => removeById(product.id)}>Eliminar</button>
         </div>
       ))}
-      <h2>Total a pagar: {total}</h2>
-      <button variant="outlined" onClick={limpiarConAlerta}>
-        Limpiar carrito
-      </button>
+      {cart.length > 0 ? (
+        <div className="btn-cart">
+          <button variant="contained" onClick={limpiarConAlerta}>
+            Vaciar carrito
+          </button>
 
-      <Link to="/checkout">
-        <Button variant="contained">Terminar compra</Button>
-      </Link>
+          <Link to="/checkout">
+            <Button variant="contained">Finalizar compra</Button>
+          </Link>
+        </div>
+      ) : (
+        <Link to="/">
+          <Button variant="contained">Agrega productos</Button>
+        </Link>
+      )}
+
+      <h1>Total a pagar: {total}</h1>
     </div>
   );
 };

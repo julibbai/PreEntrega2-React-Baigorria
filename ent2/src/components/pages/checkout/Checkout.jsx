@@ -12,10 +12,18 @@ export const Checkout = ({ envioDeFormulario, capturar }) => {
         />
         <input
           type="text"
-          placeholder="Ingresa tu apellido"
+          placeholder="Ingresa tu teléfono"
           onChange={capturar}
-          lastName="lastName"
+          phone="phone"
         />
+
+        <input
+          type="text"
+          placeholder="Ingresa tu email"
+          onChange={capturar}
+          email="email"
+        />
+
         <button type="submit">Enviar</button>
       </form>
     </div>

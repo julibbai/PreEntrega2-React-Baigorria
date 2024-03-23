@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { Checkout } from "./Checkout";
+import { CartContext } from "../../../context/CartContext";
 
 export const CheckoutContainer = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
-    lastName: "",
     phone: "",
+    email: "",
   });
+
+  const { cart, getTotalPrice } = useContext(CartContext);
+  let totalPrice = getTotalPrice();
+
   const envioDeFormulario = (event) => {
     event.preventDefault();
-    console.log("se envio el formulario");
+
+    let order = {
+      buyer: userInfo,
+      items: cart,
+      total: totalPrice,
+    };
+
+    console.log(order);
   };
 
   const capturar = (event) => {

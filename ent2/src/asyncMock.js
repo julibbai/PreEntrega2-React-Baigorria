@@ -1,27 +1,5 @@
 const products = [
   {
-    id: "1",
-    name: "Farol de pared",
-    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampext3_v5fvur.webp",
-    price: 200,
-    category: "exterior",
-    description: "Farol de color negro hecho de Polipropileno",
-    stock: 10,
-  },
-
-  {
-    id: "2",
-    name: "Tiras Led",
-    img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/tiraled_vlf2iy.jpg",
-
-    price: 750,
-    category: "led",
-    description: "Tiras Led RGB",
-    stock: 8,
-  },
-
-  {
-    id: "3",
     name: "Lampara Aplique de dos luces",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lamparaint2_bw3cge.webp",
     price: 850,
@@ -31,7 +9,6 @@ const products = [
   },
 
   {
-    id: "4",
     name: "Farol de pared texturado",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampext1_btejml.webp",
     price: 750,
@@ -42,7 +19,6 @@ const products = [
   },
 
   {
-    id: "5",
     name: "Lampara Vintage",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lampint3_gxxc8g.webp",
     price: 750,
@@ -52,7 +28,6 @@ const products = [
   },
 
   {
-    id: "6",
     name: "Lampara colgante industrial",
     img: "https://res.cloudinary.com/dedwpwwti/image/upload/w_300,h_300/v1708890322/lamparaint1_neszm2.webp",
     price: 750,
