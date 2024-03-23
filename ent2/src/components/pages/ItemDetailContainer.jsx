@@ -5,6 +5,8 @@ import { getProduct } from "../../asyncMock";
 
 import CircularProgress from "@mui/material/CircularProgress";
 import { CartContext } from "../../context/CartContext";
+import { db } from "../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 const LoadingSpinner = () => (
   <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
@@ -20,13 +22,17 @@ const ItemDetailContainer = () => {
 
   const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
-  const initial = getTotalQuantityById(+id);
+  const initial = getTotalQuantityById(id);
   console.log(initial);
   useEffect(() => {
-    getProduct(id).then((resp) => {
-      setItem(resp);
-      setIsLoading(false);
-    });
+    setIsLoading(true);
+    let productsCollection = collection(db, "products");
+    let refDoc = doc(productsCollection, id);
+    getDoc(refDoc)
+      .then((res) => {
+        setItem({ ...res.data(), id: res.id });
+      })
+      .finally(() => setIsLoading(false));
   }, [id]);
 
   const onAdd = (cantidad) => {

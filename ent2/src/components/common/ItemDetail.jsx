@@ -20,13 +20,7 @@ export const ItemDetail = ({
           <img src={item.img} alt="" />
           <p className="card-text">{item.description}</p>
           <p>Precio:{item.price}</p>
-
-          {initial ? (
-            <h3>Ya tienes {initial} en el carrito</h3>
-          ) : (
-            <h2>No tienes unidades</h2>
-          )}
-
+          {initial && <h3>Ya tienes {initial} en el carrito</h3>}
           <ItemCountContainer
             stock={item.stock}
             onAdd={onAdd}

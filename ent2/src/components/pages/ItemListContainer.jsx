@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../../asyncMock";
 import { ItemList } from "../common/ItemList";
 import { useParams } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
+import { db } from "../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const LoadingSpinner = () => (
   <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
@@ -16,30 +17,41 @@ const ItemListContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    getProducts().then((resp) => {
-      if (category) {
-        const productsFilter = resp.filter(
-          (product) => product.category === category
-        );
-        setProducts(productsFilter);
-      } else {
-        setProducts(resp);
-      }
+    let productsCollection = collection(db, "products");
 
-      setIsLoading(false);
-    });
+    let consulta;
+
+    if (category) {
+      let productsCollectionFiltered = query(
+        productsCollection,
+        where("category", "==", category)
+      );
+      consulta = productsCollectionFiltered;
+    } else {
+      consulta = productsCollection;
+    }
+    getDocs(consulta)
+      .then((res) => {
+        let arrayLindo = res.docs.map((elemento) => {
+          return { ...elemento.data(), id: elemento.id };
+        });
+        setProducts(arrayLindo);
+      })
+      .finally(() => setIsLoading(false));
   }, [category]);
 
+  if (isLoading) {
+    return (
+      <h1>
+        <center>
+          <LoadingSpinner />
+        </center>
+      </h1>
+    );
+  }
   return (
     <>
-      {isLoading ? (
-        <h2>
-          <LoadingSpinner />
-        </h2>
-      ) : (
-        <ItemList products={products} />
-      )}
+      <ItemList products={products} />
     </>
   );
 };
